@@ -1,8 +1,7 @@
-Welcome to my corner
+Linear Quadratic Regulator
 =======
 
-# Main Page
-
+Explain intuitively
 
 ## Section 1
 

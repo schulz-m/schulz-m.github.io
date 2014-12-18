@@ -1,8 +1,7 @@
-Welcome to my corner
+Visualize Dynamics in Matlab
 =======
 
-# Main Page
-
+Explain tutorial basically
 
 ## Section 1
 

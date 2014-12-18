@@ -3,7 +3,7 @@
   -- Do NOT remove the leading `#` character.
   -->
 
-# Your wiki name
+# Max Random Corner
 
 
 <!--
@@ -11,7 +11,8 @@
   -- (Read: http://dynalon.github.io/mdwiki/#!customizing.md#Theme_chooser)
   -->
 
-[gimmick:theme](spacelab)
+[gimmick:theme](readable)
+[gimmick:math]()
 
 
 <!--
@@ -19,8 +20,30 @@
   -- (Read: http://dynalon.github.io/mdwiki/#!quickstart.md#Adding_a_navigation)
   -->
 
+[Home](index.md)
+
 [About](pages/about.md)
+
+[Robotics]()
+
+* #Controller
+* [Understand Linear Quadratic Regulators (LQR)](robotics/controller/understand_lqr.md)
+- - - -
+* #State Estimation
+* [Understand the Kalman Filter (KF)](robotics/state_estimation/understand_kf.md)
+
+[Programming]()
+
+* # C++
+* [Embed Python via Boost for LQR](programming/cpp/embed_python_lqr.md)
+
+* # Matlab
+* [Visualize Dynamics Simulation](programming/matlab/visualize_dynamics.md)
+
 [Download](pages/download.md)
+
+
+[Help](help.md)
 
 <!-- A more complex navigation example: ----------------------------------------
 

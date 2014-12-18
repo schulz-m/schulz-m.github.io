@@ -1,8 +1,7 @@
-Welcome to my corner
+Kalman Filter (KF)
 =======
 
-# Main Page
-
+Explain intuitively (in comby with EKF)
 
 ## Section 1
 
