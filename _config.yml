@@ -1,5 +1,5 @@
 # Dependencies
-markdown:         redcarpet
+markdown:         kramdown
 redcarpet:
   extensions:     ["fenced_code_blocks", "autolink", "tables", "strikethrough"]
 
@@ -9,8 +9,8 @@ highlighter:      pygments
 permalink:        pretty
 
 # Setup
-title:            psimona
-tagline:          'Notes to share'
+title:            Max Schulz
+tagline:          'My random corner to share stuff'
 description:      ''
 url:              http://hyde.getpoole.com
 baseurl:          /
