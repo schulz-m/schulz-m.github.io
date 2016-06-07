@@ -1,0 +1,21 @@
+---
+layout: default
+title: Categories
+permalink: /tag/
+---
+
+hello
+
+
+{% for tag in site.tags %}
+
+<a class="anchor" id="{{ tag.first }}">uoouo</a>
+
+<h4>{{ tag.first }}</h4>
+    <hr>
+        {% for post in site.tags[tag.first] %}
+
+            ououou
+{% endfor %}
+
+{% endfor %}

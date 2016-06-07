@@ -1,0 +1,27 @@
+# Dependencies
+markdown:         redcarpet
+redcarpet:
+  extensions:     ["fenced_code_blocks", "autolink", "tables", "strikethrough"]
+
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
+
+# Setup
+title:            psimona
+tagline:          'Notes to share'
+description:      ''
+url:              http://hyde.getpoole.com
+baseurl:          /
+
+author:
+  name:           'Mark Otto'
+  url:            https://twitter.com/mdo
+
+paginate:         5
+
+# Custom vars
+github:
+  repo:           https://github.com/poole/hyde
