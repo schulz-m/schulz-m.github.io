@@ -1,4 +1,7 @@
-#Gitignore for website
+# Gitignore for website
 
-#Ignore nasty Mac Store Files
+# Ignore nasty Mac Store Files
 *.DS_Store
+
+# Ignore generated site
+_site/
