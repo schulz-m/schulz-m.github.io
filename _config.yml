@@ -11,13 +11,13 @@ permalink:        pretty
 # Setup
 title:            Max Schulz
 tagline:          ''
-description:      'My random corner to share stuff'
-url:              http://hyde.getpoole.com
-baseurl:          http://schulz-m.github.io/schulz-m.github.io/
+description:      'A random corner in the internet'
+url:              http://schulz-m.github.io
+baseurl:          http://schulz-m.github.io
 
 author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
+  name:           'Maximilian Schulz'
+  url:            https://ch.linkedin.com/in/schulzmaximilian
 
 paginate:         5
 
