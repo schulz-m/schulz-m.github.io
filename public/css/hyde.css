@@ -83,6 +83,12 @@ html {
   font-size: 3.25rem;
 }
 
+.sidebar-about img.avatar {
+  height: 200px;
+  border-radius: 100px;
+  margin: 0 auto 1rem auto;
+}
+
 /* Sidebar nav */
 .sidebar-nav {
   margin-bottom: 1rem;
@@ -97,6 +103,23 @@ a.sidebar-nav-item:focus {
 }
 .sidebar-nav-item.active {
   font-weight: bold;
+}
+
+.sidebar .copyright {
+}
+
+.sidebar .social-links ul {
+  list-style: none;
+  padding-left: 0;
+  overflow: hidden;
+  width: 175px;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.sidebar .social-links ul li {
+  float: left;
+  font-size: 1.25rem;
 }
 
 /* Sticky sidebar
