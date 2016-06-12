@@ -1,11 +1,8 @@
 <div class="sidebar">
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
-      <h1>
-        <a href="{{ site.baseurl }}">
-          {{ site.title }}
-        </a>
-      </h1>
+      <img src="/assets/max.png" alt="Picture of me" class="avatar" />
+      <h2><a href="{{ site.baseurl }}">{{ site.title }}</a></h2>
       <p class="lead">{{ site.description }}</p>
     </div>
 
@@ -32,10 +29,11 @@
       <ul>
         <li><a href="mailto:mnschulz@icloud.com">{% include svg-icons/email.html %}</a></li>
         <li><a href={{site.linkedin}}>{% include svg-icons/linkedin.html %}</a></li>
-        <li><a href="https://github.com/schulzm">{% include svg-icons/github.html %}</a></li>
+        <li><a href={{site.github.account}}>{% include svg-icons/github.html %}</a></li>
         <li><a href={{site.googleplus}}>{% include svg-icons/google-plus.html %}</a></li>
       </ul>
     </div>
-    <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
+
+    <p class="copyright">&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
   </div>
 </div>

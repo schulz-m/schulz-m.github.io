@@ -5,6 +5,8 @@ redcarpet:
 
 highlighter:      rouge
 
+gems: [jekyll-paginate]
+
 # Permalinks
 permalink:        pretty
 
@@ -13,14 +15,19 @@ title:            Max Schulz
 tagline:          ''
 description:      'A random corner in the internet'
 url:              http://schulz-m.github.io
-baseurl:          http://schulz-m.github.io
+baseurl:          /
 
 author:
   name:           'Maximilian Schulz'
   url:            https://ch.linkedin.com/in/schulzmaximilian
 
 paginate:         5
+paginate_path: "page:num"
 
 # Custom vars
 github:
-  repo:           https://github.com/poole/hyde
+  repo:           https://github.com/schulz-m/schulz-m.github.io
+  account:        https://github.com/schulz-m/
+
+linkedin:         https://www.linkedin.com/in/schulzmaximilian/
+googleplus:       https://plus.google.com/117676537252169100298
