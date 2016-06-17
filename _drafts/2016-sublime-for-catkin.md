@@ -36,6 +36,7 @@ Some other neat extensions:
 
 ## Set up the catkin project
 
+Open sublime and then simply add your `catkin_ws/src` folder by using `Project -> Add Folder to Project`, then save it as a project file in a location of your joice by `Project -> Save Project as...`.
 
 
 ## Example CPP Code
