@@ -19,6 +19,8 @@ permalink: /archive/
 	{{ post.date | date:"%Y-%m-%d" }}
 	</time>
 
-	<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | capitalize }}</a><br />
+	<a href="{{ post.url }}">{{ post.title | capitalize}}</a>
+	<!-- @TODO: Fix this -->
+	<!-- <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | capitalize }}</a><br /> -->
 {% endfor %}
 </div>
