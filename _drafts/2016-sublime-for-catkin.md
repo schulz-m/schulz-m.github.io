@@ -76,3 +76,12 @@ At some point it would be nice to combine the featured CTags to work with this.
 [sublime ros assist](https://github.com/groundmelon/SublimeRosAssist)
 [script to create project / doesn't work at all](https://gist.github.com/wjwwood/5273972)
 
+## Setup specific for ROS projects
+
+There are several nice features offered specifically for project development in ROS.
+
+### ROS Msg File Syntax
+
+Download the syntax file from [Github](https://gist.github.com/eric-wieser/1cd2919483d18d6b3788a54dec4f165c) and copy the file into `~.config/sublime-text-3/Packages/User`. Now you can simply select *ROS message definition* with `View -> Syntax -> Open all with current extension as...`.
+
+...
