@@ -38,50 +38,43 @@ Some other neat extensions:
 
 Some of the useful keybindings to show the power of sublime:
 
-* TEXT EDITING
-* `ctrl + d` multi-select occurances of pattern
-* `ctrl + click` multi-cursor selection
-* WINDOW NAVIGATION
-* `shift + alt + num` Number of split windows in editor
-* FILE NAVIGATION
-* `ctrl + p` search box to look for files inside the opened folder
-* `ctrl + o` to use the OS navigation to open another file in sublime
-* `alt + o` to switch between source and header files (only works for projects)
+| TEXT EDITING  | |
+| :------------- |-------------:|
+| `ctrl + d` | multi-select occurances of pattern |
+| `ctrl + click` | multi-cursor selection |
+
+| WINDOW NAVIGATION | |
+| :------------- |-------------:|
+| `shift + alt + num` | number of split windows in editor |
+| `ctrl + page up/down` | uo alter between file tabs |
+
+| FILE NAVIGATION |  |
+| :------------- |-------------:|
+| `ctrl + p` | search box to look for files inside the opened folder |
+| `ctrl + o` | to use the OS navigation to open another file in sublime |
+| `alt + o` | to switch between source and header files |
+| `ctrl + shift + f` | find all occurences within a certain folder |
 
 ## Set up the catkin project
+
+### Create project files
 
 Open sublime and then simply add your `catkin_ws/src` folder by using `Project -> Add Folder to Project`, then save it as a project file in a location of your joice by `Project -> Save Project as...`.
 
 Now when you open sublime, by default you should have your catkin workspace in the file navigator.
 
+### Build tags to jump to definitions
+
 As a next step, you want to use CTags to jump through definitions in your source code. The source of the CTags Plugin is found [here](https://github.com/SublimeText/CTags). You can simply install it by using the package manager. As a refresher: Type `Alt + Shift + P` and type install. Type `ctags` and put enter. For ctags to work properly, ctags also has to be installed on the OS via `sudo apt-get install exuberant-ctags`.
 
-To build the indices just right click on your project folder and click `CTags: Rebuild Tags` in the context menu.
+To build the indices just right click on your project folder and click `CTags: Rebuild Tags` in the context menu. In the context menu, a buttom `Navigate to Definition` should now have appeared.
 
---------- DEPRECATED
-Install sublime-clang (Warning: Apparently deprecated soon) [link](https://chromium.googlesource.com/chromium/src/+/master/docs/linux_sublime_dev.md#Code-Completion-with-SublimeClang-Linux-Only)
+### Build catkin packages from sublime
 
-Show how to install [SublimeRosAssist](https://github.com/groundmelon/SublimeRosAssist)
+It is very straightforward to build catkin packages using [catkin tools](https://catkin-tools.readthedocs.io/en/latest/) within sublime. Simply install the [catkin builder](https://packagecontrol.io/packages/Catkin%20Builder) using the package manager. You can then either run it with `ctrl + shift + p` and then `Build with: Catkin` or using `Tools -> Build`.
 
-```
-cd ~/.config/sublime-text-3/Packages
-git clone https://github.com/groundmelon/SublimeRosAssist.git
-
-```
-
-At some point it would be nice to combine the featured CTags to work with this.
-
-[ycmd backend](https://github.com/Valloric/ycmd)
-[cpp youcompleteme](https://github.com/glymehrvrd/CppYCM)
-[sublime ros assist](https://github.com/groundmelon/SublimeRosAssist)
-[script to create project / doesn't work at all](https://gist.github.com/wjwwood/5273972)
-
-## Setup specific for ROS projects
-
-There are several nice features offered specifically for project development in ROS.
+> Note: If you have your sources symbolically linked into your workspace this package won't work, I should make an issue about this at some point.
 
 ### ROS Msg File Syntax
 
 Download the syntax file from [Github](https://gist.github.com/eric-wieser/1cd2919483d18d6b3788a54dec4f165c) and copy the file into `~.config/sublime-text-3/Packages/User`. Now you can simply select *ROS message definition* with `View -> Syntax -> Open all with current extension as...`.
-
-...
