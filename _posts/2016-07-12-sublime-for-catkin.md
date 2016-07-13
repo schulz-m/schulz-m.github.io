@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: "Sublime with Catkin"
 tags:
 - Sublime
