@@ -19,15 +19,14 @@ In my bachelors, I was a team member of [Project Pegasus](http://www.pegasus.eth
 
 This was a 4 month project in my masters that was aimed at developing robust state estimates for a quadrotor using the least amount of sensors possible to enable a smooth landing. An important concept was the so called (and now widely used) [error-state Kalman Filter](http://www.iri.upc.edu/people/jsola/JoanSola/objectes/notes/kinematics.pdf) and a ground estimation using barometer, sonar sensors and accelerometers. Some of the developed concepts could later be reused to [throw a quadrotor into the air](https://www.youtube.com/watch?v=pGU1s6Y55JI).
 
-> Note: Description of Master research projects in progress.
-
 ### High-Speed Flight of a Tethered Quadrotor
 
-[link to video](https://www.youtube.com/watch?v=iJPy1geXu4M)
+The Master Thesis was about inventing a method to enable high-speed, steady flights in confined spaces using a tethered quadrocopter. For this purpose, the centripetal forces exerted by the tether were used to fly circular trajectories with velocities up to 15 m/s and centripetal accelerations of more than 13 g in steady Flight. The achieved flight performance allows to record data that enables the characterization of quadrocopters at high airspeeds. The main contribution in this project was the system design and implementation on a [pixhawk microcontroller](https://pixhawk.org/) including the mechanical modelling of the system and the design of linear control strategies that made the [quadrotor fly up to its limits](https://www.youtube.com/watch?v=iJPy1geXu4M)!
 
 ### Building a Rope Bridge with Flying Machines
 
-[link to video](https://www.youtube.com/watch?v=CCDIuZUfETc)
+During my time as a research associate working at the [Flying Machine Arena](http://flyingmachinearena.org/), I had the honor to work on the development of methods and strategies that enable small flying machines to assemble a
+rope bridge that can support the [crossing of a person](https://www.youtube.com/watch?v=CCDIuZUfETc). The work involved tuning the spool controller that deployed the ropes, implemented complex motion primitives and identify rope models to plan the building process.
 
 ## Photohraphy
 
