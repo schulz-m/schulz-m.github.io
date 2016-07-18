@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "Rospy subscribe and access Topic regardless of Message Type"
+comments: true
+title: "Subscribe and Access Topic in Rospy regardless of Message Type"
 tags:
 - Rospy
 - ROS
