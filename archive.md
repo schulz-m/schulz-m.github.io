@@ -20,7 +20,6 @@ permalink: /archive/
 	</time>
 
 	<a href="{{ post.url }}">{{ post.title | capitalize}}</a>
-	<!-- @TODO: Fix this -->
-	<!-- <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | capitalize }}</a><br /> -->
+	<br />
 {% endfor %}
 </div>
