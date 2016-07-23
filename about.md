@@ -28,7 +28,7 @@ The Master Thesis was about inventing a method to enable high-speed, steady flig
 During my time as a research associate working at the [Flying Machine Arena](http://flyingmachinearena.org/), I had the honor to work on the development of methods and strategies that enable small flying machines to assemble a
 rope bridge that can support the [crossing of a person](https://www.youtube.com/watch?v=CCDIuZUfETc). The work involved tuning the spool controller that deployed the ropes, implemented complex motion primitives and identify rope models to plan the building process.
 
-## Photohraphy
+## Photography
 
 Regarding online presence in my free time, I like to play around with design tools and photography, you can find some of my work on my [Flickr account](https://www.flickr.com/photos/144925784@N04/).
 
