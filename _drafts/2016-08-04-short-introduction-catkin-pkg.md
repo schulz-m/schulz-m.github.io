@@ -53,7 +53,7 @@ As recommended in the ROS wiki you should use the [package format two](http://ww
 
 The dependency tags that are explained and used are the following:
 
-* `<buildtool_depend>` Specify a package that provides tools (e.g. python scripts) to build components within the package that uses the tool.
+* `<buildtool_depend>` Specify a package that provides tools (e.g. CMake commands) to build components within the package that uses the tool.
 * `<build_depend>` Specify a package that is needed to build this package, e.g. either by headers or pre-compiled libraries.
 * `<build_export_depend>` Specify a package that will be needed by another package if it wants to build this package, this is easiest explained e.g. with a header only package.
 * `<exec_depend>` Specify a package that you need in order to run the package, this can be the case if you have it specified in your launch files or if you depend on shared libraries provied by this package.
@@ -66,12 +66,16 @@ This package is only dependent on standard ROS components and is not building an
 ```xml
 <name>header_only_package</name>
 
+<buildtool_depend>catkin</buildtool_depend>
+
 <build_export_depend>roscpp</build_export_depend>
 ```
 
-EXPLANATION
+As you will see, we pretty much always want to have a buildtool dependency on catkin, as it provides the necessary CMake command `catkin_package` explained below to actually define the catkin package. For this example, the package only consists of a template that needs the package `roscpp` and nothing is built, such that `roscpp` is a build dependency for all packages that want to use the `header_only_package`.
 
 ### Normal
+
+This package simply consists of a node that is independent of the other packages, but uses `roscpp`.
 
 ```xml
 <name>normal_package</name>
@@ -81,9 +85,11 @@ EXPLANATION
 <depend>roscpp</depend>
 ```
 
-EXPLANATION
+For the simple standard case, you will simply have a `<depend>` tag for the package `roscpp` as it provides headers and shared libraries that you need both at compile time and run time for a "standard node".
 
 ### Combined
+
+This package uses both the `header_only_package` and the `normal_package` to be built and run.
 
 ```xml
 <name>combined_package</name>
@@ -96,7 +102,7 @@ EXPLANATION
 <depend>normal_package</depend>
 ```
 
-EXPLANATION
+Both `roscpp` and `normal_package` provide headers and shared libraries that we use in this package, so both need a `<depend>` tag, as will also be clearer once you look at the CMake files. For the `header_only_package` we only have a build dependency because the inclusion of the headers is only needed at built time. Note that if another package would built the `combined_package`, the `header_only_package` would also be a build export dependency.
 
 ## CMake Configurations
 
@@ -109,6 +115,8 @@ Out of the scope of this post is `add_dependencies`, LOOK UP DOC and explain pro
 ```CMake
 project(header_only_package)
 
+find_package(catkin REQUIRED)
+
 catkin_package(
   INCLUDE_DIRS
     include
@@ -117,7 +125,7 @@ catkin_package(
 )
 ```
 
-EXPLANATION
+find_package because of buildtool
 
 ### Normal
 
