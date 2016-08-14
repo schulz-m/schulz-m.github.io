@@ -9,11 +9,11 @@ tags:
 
 ## Introduction
 
-A common problem I encountered myself a lot of times is that you simply want to subscribe to a topic and access a certain field of the published message without knowing its type, it turns out that this is rather simply todo in python by using the [Connection Header](http://wiki.ros.org/ROS/Connection%20Header) of the handy [AnyMsg](http://docs.ros.org/jade/api/rospy/html/rospy.msg.AnyMsg-class.html) that lets you subscribe to any topic regardless of type.
+A common problem I encountered a lot of times is that you simply want to subscribe to a topic and access a certain field of the published message without knowing its type. It turns out that this is rather simple to do in python by using the [Connection Header](http://wiki.ros.org/ROS/Connection%20Header) of the handy [AnyMsg](http://docs.ros.org/jade/api/rospy/html/rospy.msg.AnyMsg-class.html) that lets you subscribe to any topic regardless of type.
 
 ## Example Class
 
-Here an example of a simple example class that subscribes to `some_topic` and prints its field `known_field`, nicely using python's idiom of [duck typing](https://en.wikipedia.org/wiki/Duck_typing).
+See the following simple example class that subscribes to `some_topic` and prints its field `known_field`, nicely using python's idiom of [duck typing](https://en.wikipedia.org/wiki/Duck_typing).
 
 ```python
 import rospy
