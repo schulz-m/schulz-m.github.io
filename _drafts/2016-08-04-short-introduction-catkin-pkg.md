@@ -49,7 +49,7 @@ A possible file structure could be as follows:
 
 ## Package Configurations
 
-As recommended in the ROS wiki you should use the [package format two](http://www.ros.org/reps/rep-0140.html) as it provides much more consize and clear description tags. For these examples I will miss out the enclosing `<package format="2">` and not dependency-related tags as e.g. `<version>`, `<description>` or `<license>`.
+As recommended in the ROS wiki you should use the [package format two](http://www.ros.org/reps/rep-0140.html) as it provides much more consize and clear description tags. For these examples I will not include the enclosing `<package format="2">` and not dependency-related tags as e.g. `<version>`, `<description>` or `<license>`.
 
 The dependency tags that are explained and used are the following:
 
@@ -106,9 +106,13 @@ Both `roscpp` and `normal_package` provide headers and shared libraries that we 
 
 ## CMake Configurations
 
-GENERAL INTRO
+These configurations define the necessary macros, dependencies etc. for the CMake build system. Apart from the self-explanatory command `project()`, the following commands are used in this post:
 
-Out of the scope of this post is `add_dependencies`, LOOK UP DOC and explain properly.
+* `find_package` Finds other packages to build this package, basically listing all your `build dependencies`.
+* `catkin_package` Defines the catkin package as such
+* `include_directories` Packages to include
+* `add_library`
+* `target_link_library`
 
 ### Header Only
 
