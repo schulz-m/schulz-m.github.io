@@ -9,13 +9,13 @@ tags:
 
 ## Introduction
 
-The basic structure of a catkin package is very simple, there are two configuration files: the first one `package.xml` is to describe the meta-information about the dependencies [(wiki)](http://wiki.ros.org/catkin/package.xml), the second one `CMakeLists.txt` is the usual configuration file for the CMake build system [(wiki)](http://wiki.ros.org/catkin/CMakeLists.txt). Despite the supposingly clear XML and CMake commands I have found some of them to be rather confusing for regular day to day package building in C++, so this post tries to clear some confusion with these configurations in the context of building in a devel space.
+The basic structure of a catkin package is very simple, there are two configuration files: the first one, `package.xml`, is to describe the meta-information about the dependencies [(wiki)](http://wiki.ros.org/catkin/package.xml), the second one `CMakeLists.txt` is the usual configuration file for the CMake build system [(wiki)](http://wiki.ros.org/catkin/CMakeLists.txt). Despite the supposingly clear XML and CMake commands I have found some of them to be rather confusing for regular day to day package building in C++, so this post tries to clear some confusion with these configurations in the context of building in a devel space.
 
 ## Example Packages
 
 We will consider three example packages for this post:
 
-* `header_only_package`: Where nothing gets compiled and solely provides headers
+* `header_only_package`: Nothing gets compiled and solely provides headers
 * `normal_package`: Simply uses standard components to build a node
 * `combined_package`: Builds a node that is dependent on the other two packages
 
@@ -49,14 +49,14 @@ A possible file structure could be as follows:
 
 ## Package Configurations
 
-As recommended in the ROS wiki you should use the [package format two](http://www.ros.org/reps/rep-0140.html) as it provides much more consize and clear description tags. For these examples I will not include the enclosing `<package format="2">` and not dependency-related tags as e.g. `<version>`, `<description>` or `<license>`.
+As recommended in the ROS wiki you should use the [package format two](http://www.ros.org/reps/rep-0140.html) as it provides much more consize and clear description tags. For these examples I will not include the enclosing `<package format="2">` that defines this usage. Other not dependency-related tags as e.g. `<version>`, `<description>` or `<license>` are also ommited.
 
 The dependency tags that are explained and used are the following:
 
 * `<buildtool_depend>` Specify a package that provides tools (e.g. CMake commands) to build components within the package that uses the tool.
 * `<build_depend>` Specify a package that is needed to build this package, e.g. either by headers or pre-compiled libraries.
 * `<build_export_depend>` Specify a package that will be needed by another package if it wants to build this package, this is easiest explained e.g. with a header only package.
-* `<exec_depend>` Specify a package that you need in order to run the package, this can be the case if you have it specified in your launch files or if you depend on shared libraries provied by this package.
+* `<exec_depend>` Specify a package that you need in order to run the package, this can be the case e.g. if you only use it in your launch files or if you depend on shared libraries provided by this package.
 * `<depend>` Catch it all tag that specifies packages that are build, build export and execution dependencies.
 
 ### Header Only
@@ -108,11 +108,12 @@ Both `roscpp` and `normal_package` provide headers and shared libraries that we 
 
 These configurations define the necessary macros, dependencies etc. for the CMake build system. Apart from the self-explanatory command `project()`, the following commands are used in this post:
 
-* `find_package` Finds other packages to build this package, basically listing all your `build dependencies`.
-* `catkin_package` Defines the catkin package as such
-* `include_directories` Packages to include
-* `add_library`
-* `target_link_library`
+* `find_package` Finds other packages to build this package, basically listing all your `build` and `buildtoool` dependencies. You pretty much always want to have a dependency on `catkin` which also defines CMake variables such as `${catkin_INCLUDE_DIRS}`.
+* `catkin_package` Defines the catkin package as such and is used by the catkin build system to generate the necessary configurations.
+* `include_directories` Packages to include, for most cases this will simply need the `${catkin_INCLUDE_DIRS}` variable and any local includes, as all the catkin packages are concatenated in this variable. 
+* `add_executable` Defines an executable to be built.
+* `add_library` Defines a library (shared by default) built in this package, pretty straightforward.
+* `target_link_library` Link the specified library or executable against other libraries, usually you will simply need `${catkin_LIBRARIES}` as again, all shared libraries within your catkin workspace are concatenated in this variable.
 
 ### Header Only
 
@@ -129,7 +130,7 @@ catkin_package(
 )
 ```
 
-find_package because of buildtool
+As this package is not building anything, there is no package to be found except `catkin` for the `catkin_package` CMake macro. For everyone using this package we define the `roscpp` dependency such that it's built before someone tries to build this package - this is exactly what a `build export` dependency is.
 
 ### Normal
 
@@ -163,7 +164,7 @@ target_link_libraries(normal_package
 )
 ```
 
-EXPLANATION
+Because we build a library in this package, we have to `find_package` the package `roscpp`, which is also defined at the `CATKIN_DEPENDS` tag, because obviously `roscpp` needs to be built in order to build this package as well. Note that this would not be the case if it were for example a header only package, so to be very precise, you need to know what exactly you are using from the package (is there an automatic way to do this?). In addition, in this package we define the library `normal_package` and therefore define the include directory, source file and libraries to link to (in this case only libraries from catkin).
 
 ### Combined
 
@@ -188,8 +189,14 @@ include_directories(
   include
   ${catkin_INCLUDE_DIRS}
 )
+
+add_executable(combined_package_node src/node.cpp)
+
+target_link_libraries(combined_package_node
+  ${catkin_LIBRARIES}
+)
 ```
 
-EXPLANATION
+For the combined package we are not building any library here, but only the executable `combined_package_node` that also has to be linked against `${catkin_LIBRARIES}` to be able to actually use the library provided by `normal_package`. Note that we only need to `find_package()` the `header_only_package` as it doesn't need to be built before building this package - after all we are only including it's headers so simply need the path!
 
 

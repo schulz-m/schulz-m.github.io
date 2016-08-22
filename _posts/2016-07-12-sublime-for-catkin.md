@@ -37,30 +37,30 @@ Some other neat extensions:
 * [Sublime Linter for Code Style](http://www.sublimelinter.com/en/latest/)
 * [Increment Selection](https://github.com/yulanggong/IncrementSelection)
 
-Some of the useful keybindings to show the power of sublime:
+Some of the useful key-bindings to show the power of sublime:
 
 | TEXT EDITING  | |
 | :------------- |-------------:|
-| `ctrl + d` | multi-select occurances of pattern |
+| `ctrl + d` | multi-select occurrences of pattern |
 | `ctrl + click` | multi-cursor selection |
 
 | WINDOW NAVIGATION | |
 | :------------- |-------------:|
 | `shift + alt + num` | number of split windows in editor |
-| `ctrl + page up/down` | uo alter between file tabs |
+| `ctrl + page up/down` | to alter between file tabs |
 
 | FILE NAVIGATION |  |
 | :------------- |-------------:|
 | `ctrl + p` | search box to look for files inside the opened folder |
 | `ctrl + o` | to use the OS navigation to open another file in sublime |
 | `alt + o` | to switch between source and header files |
-| `ctrl + shift + f` | find all occurences within a certain folder |
+| `ctrl + shift + f` | find all occurrences within a certain folder |
 
 ## Set up the catkin project
 
 ### Create project files
 
-Open sublime and then simply add your `catkin_ws/src` folder by using `Project -> Add Folder to Project`, then save it as a project file in a location of your joice by `Project -> Save Project as...`.
+Open sublime and then simply add your `catkin_ws/src` folder by using `Project -> Add Folder to Project`, then save it as a project file in a location of your choice by `Project -> Save Project as...`.
 
 Now when you open sublime, by default you should have your catkin workspace in the file navigator.
 
