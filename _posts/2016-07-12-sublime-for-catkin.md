@@ -13,6 +13,8 @@ tags:
 
 This post is about the usage of sublime with the catkin infrastructure used by ROS. This was tested with **Ubuntu 14.04 LTS** and **ROS Indigo**. The post assumes that you are familiar with both **ROS** and **catkin** and that you have a catkin workspace working with the usual folder structure in `~/catkin_ws`. Another nice introduction into using sublime as your IDE can be found at [Linux Sublime Dev](https://chromium.googlesource.com/chromium/src/+/master/docs/linux_sublime_dev.md), this post aims to provide a simple overview and setup for **catkin** specifically.
 
+<!--more-->
+
 ## Sublime Installation
 
 For those of you who have never heard of sublime, here a quick and dirty installation guide to have the setup that I am working with. First install sublime 3:

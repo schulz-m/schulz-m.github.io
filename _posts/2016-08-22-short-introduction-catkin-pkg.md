@@ -10,7 +10,9 @@ tags:
 
 ## Introduction
 
-The basic structure of a catkin package is very simple, there are two configuration files: the first one, `package.xml`, is to describe the meta-information about the dependencies [(wiki)](http://wiki.ros.org/catkin/package.xml), the second one `CMakeLists.txt` is the usual configuration file for the CMake build system [(wiki)](http://wiki.ros.org/catkin/CMakeLists.txt). Despite the supposingly clear XML and CMake commands I have found some of them to be rather confusing for regular day to day package building in C++, so this post tries to clear some confusion with these configurations in the context of building in a devel space.
+The basic structure of a catkin package is very simple. There are two configuration files: the first one, `package.xml`, is to describe the meta-information about the dependencies [(wiki)](http://wiki.ros.org/catkin/package.xml), the second one `CMakeLists.txt` is the usual configuration file for the CMake build system [(wiki)](http://wiki.ros.org/catkin/CMakeLists.txt). Despite the supposingly clear XML and CMake commands I have found some of them to be rather confusing for regular day to day package building in C++, so this post tries to clear some confusion with these configurations in the context of building in a devel space.
+
+<!--more-->
 
 ## Example Packages
 
