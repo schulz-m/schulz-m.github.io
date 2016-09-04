@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: "Short Introduction into Catkin Packages"
 tags:
 - C++
