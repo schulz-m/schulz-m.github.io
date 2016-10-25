@@ -51,3 +51,4 @@ Inside the `binary_callback` we parse the connection header of the msg and assum
 
 After we imported the module and got the type of the incoming msg, we simply unregister the binary subscriber and create a subscriber with the known type. Note that this implementation only allows the class to listen to the first incoming MsgType on this topic.
 
+*Note*: There is also a C++ alternative provided by [this package](http://wiki.ros.org/ros_type_introspection).
