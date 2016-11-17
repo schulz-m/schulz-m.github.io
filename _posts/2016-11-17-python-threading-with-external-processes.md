@@ -10,6 +10,8 @@ tags:
 
 Often when you write python scripts you might realize that the steps in one of your loops are actually not dependent on each other, so you could [parallelize](https://en.wikipedia.org/wiki/Parallel_computing) them. In it's simplest form, to parallelize computations python offers ready made *threads* and *locks*. There are two distinct ways to parallelize computation in python, either through Multiprocessing (and the according multiprocessing package) or Threading (and the according threading package), the pros and cons are excellently summarized by Jeremy Brown on [stackoverflow](http://stackoverflow.com/a/3046201/5882522). This post only covers a toy example for the use of the threading package.
 
+<!--more-->
+
 # Threading package
 
 The threading package offers the usage of the threads of the underlying OS to be able to execute some job while already starting other jobs. Note that the package doesn't circumvent the so called [Global Interpreter Lock](https://docs.python.org/2/glossary.html#term-global-interpreter-lock) that prevents to have python threads running truly parallel on the same interpreter, i.e. if you run your python script the interpreter will always lock all the resources. That's why in this post we will only focus on running an *external process* in parallel as for example a `cmake` command.
