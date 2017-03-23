@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: "Python Threading with External Processes"
 tags:
 - Python
@@ -94,7 +95,7 @@ The worker gets the job done, he is simply designed as a subclass of the [thread
 
 ## Job
 
-The job object is simply to package the code to execute as a job in a queue. In the execution, we use the `commands` package to invoke the `cmake` command on the specific app and afterwards acquire a mutex for uninterupted printing of the result.
+The job object is simply to package the code to execute as a job in a queue. In the execution, we use the `commands` package to invoke the `cmake` command on the specific application and afterwards acquire a mutex for uninterrupted printing of the result.
 
 ## Main code
 

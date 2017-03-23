@@ -4,7 +4,7 @@ comments: true
 title: "Sublime with Catkin"
 tags:
 - Sublime
-- Cpp
+- C++
 - Catkin
 - ROS
 ---
@@ -70,7 +70,7 @@ Now when you open sublime, by default you should have your catkin workspace in t
 
 As a next step, you want to use CTags to jump through definitions in your source code. The source of the CTags Plugin is found [here](https://github.com/SublimeText/CTags). You can simply install it by using the package manager. As a refresher: Type `Alt + Shift + P` and type install. Type `ctags` and put enter. For ctags to work properly, ctags also has to be installed on the OS via `sudo apt-get install exuberant-ctags`.
 
-To build the indices just right click on your project folder and click `CTags: Rebuild Tags` in the context menu. In the context menu, a buttom `Navigate to Definition` should now have appeared.
+To build the indices just right click on your project folder and click `CTags: Rebuild Tags` in the context menu. In the context menu, a bottom `Navigate to Definition` should now have appeared.
 
 ### Build catkin packages from sublime
 
